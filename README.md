@@ -1,8 +1,67 @@
-# React + Vite
+# Album de Fotos (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicacao React que consome a API do Unsplash para:
+- listar fotos aleatorias na tela inicial
+- pesquisar fotos por texto
+- filtrar por categorias
+- abrir foto ampliada em modal
 
-Currently, two official plugins are available:
+## Tecnologias
+- React 18
+- Vite 5
+- Axios
+- ESLint
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requisitos
+- Node.js 18+ (recomendado)
+- npm
+- chave de API do Unsplash
+
+## Configuracao
+1. Instale as dependencias:
+
+```bash
+npm install
+```
+
+2. Crie o arquivo `.env` na raiz do projeto:
+
+```env
+VITE_UNSPLASH_API_KEY=sua_chave_aqui
+```
+
+3. Rode o projeto em modo desenvolvimento:
+
+```bash
+npm run dev
+```
+
+## Scripts disponiveis
+- `npm run dev`: inicia o servidor de desenvolvimento
+- `npm run build`: gera build de producao
+- `npm run preview`: executa preview do build
+- `npm run lint`: roda validacao de codigo com ESLint
+
+## Estrutura do projeto
+```text
+src/
+  components/
+    SearchBar.jsx
+    FotoList.jsx
+    Foto.jsx
+    FotoAmpliada.jsx
+  App.jsx
+  main.jsx
+```
+
+## Como funciona
+- Ao abrir a aplicacao, sao buscadas 10 fotos aleatorias no Unsplash.
+- Quando voce pesquisa e/ou seleciona categoria, a busca usa `/search/photos`.
+- Ao clicar em uma foto, ela abre ampliada em um modal.
+
+## Seguranca
+- Nao versione o arquivo `.env`.
+- Mantenha `node_modules/` no `.gitignore`.
+
+## Autor
+Matheus Sousa
